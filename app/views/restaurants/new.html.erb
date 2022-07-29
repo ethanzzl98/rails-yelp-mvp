@@ -1,0 +1,9 @@
+<% category = %w[chinese italian japanese french belgian] %>
+<%= simple_form_for @restaurant do |form| %>
+  <%= form.input :name %>
+  <%= form.input :address %>
+  <%= form.label :category %>
+  <%= form.select :category, category.map {|type| [type.capitalize, type]} %>
+  <%= form.input :phone_number %>
+  <%= form.submit %>
+<% end %>
